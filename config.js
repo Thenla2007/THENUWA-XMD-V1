@@ -51,8 +51,8 @@ const baseConfig = {
     // ─── BOT CORE ───
     SESSION_ID: process.env.SESSION_ID || get('SESSION_ID', "session id eka danna methanata"),
     PREFIX: get('PREFIX', "."),
-    BOT_NAME: get('BOT_NAME', "PATHUMTECH-MD"),
-    STICKER_NAME: get('STICKER_NAME', "PATHUMTECH-MD"),
+    BOT_NAME: get('BOT_NAME', "THENUWA XMD"),
+    STICKER_NAME: get('STICKER_NAME', "THENUWA XMD"),
     MODE: get('MODE', "public"),
     ALWAYS_ONLINE: get('ALWAYS_ONLINE', "false"),
     READ_MESSAGE: get('READ_MESSAGE', "false"),
@@ -63,8 +63,8 @@ const baseConfig = {
 
     // ─── OWNER INFO ───
     OWNER_NUMBER: get('OWNER_NUMBER', "94773416478"),
-    OWNER_NAME: get('OWNER_NAME', "PathumTech"),
-    DESCRIPTION: get('DESCRIPTION', "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ PATHUMTECH*"),
+    OWNER_NAME: get('OWNER_NAME', "THENULA"),
+    DESCRIPTION: get('DESCRIPTION', "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENUWA XMD*"),
     DEV: process.env.DEV || "94773416478",
     
    
@@ -90,8 +90,8 @@ const baseConfig = {
     // ─── MEDIA SETTINGS ───
     AUTO_VOICE: get('AUTO_VOICE', "false"),
     AUTO_STICKER: get('AUTO_STICKER', "false"),
-    ALIVE_IMG: get('ALIVE_IMG', "https://files.catbox.moe/78g7us.jpg"),
-    LIVE_MSG: get('LIVE_MSG', "> HELLO I'AM *PATHUMTECH-MD*⚡"),
+    ALIVE_IMG: get('ALIVE_IMG', "https://files.catbox.moe/ca2i7o.png"),
+    LIVE_MSG: get('LIVE_MSG', "> HELLO I'AM *THENUWA XMD*⚡"),
     BUTTON: get('BUTTON', "true"),
 
     // ─── SECURITY / ANTILINK ───
@@ -109,9 +109,9 @@ const baseConfig = {
     ANTI_LINK_SKIP_BOT: get('ANTI_LINK_SKIP_BOT', "true"),
 
     // ─── DATABASE & API ───
-    DASHBOARD_PASSWORD: process.env.DASHBOARD_PASSWORD || get('DASHBOARD_PASSWORD', 'pathum1234'),  //DASHBOARD PASSWORD ekak da ganna
+    DASHBOARD_PASSWORD: process.env.DASHBOARD_PASSWORD || get('DASHBOARD_PASSWORD', 'thenula@2007'),  //DASHBOARD PASSWORD ekak da ganna
     MONGODB_URI: process.env.MONGODB_URI || get('MONGODB_URI', ''),
-    MONGODB_DB_NAME: process.env.MONGODB_DB_NAME || get('MONGODB_DB_NAME', 'luxalgo'),    //oyalage database name eka danna methanata
+    MONGODB_DB_NAME: process.env.MONGODB_DB_NAME || get('MONGODB_DB_NAME', 'thenula'),    //oyalage database name eka danna methanata
     
   
     PATHUM_API_URL: process.env.PATHUM_API_URL || get('PATHUM_API_URL', 'https://pathumtech-api.vercel.app'),
