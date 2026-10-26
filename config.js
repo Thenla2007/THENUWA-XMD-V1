@@ -62,7 +62,7 @@ const baseConfig = {
     AUTO_RECORDING: get('AUTO_RECORDING', "false"),
 
     // ─── OWNER INFO ───
-    OWNER_NUMBER: get('OWNER_NUMBER', "94773416478"),
+    OWNER_NUMBER: get('OWNER_NUMBER', "94763853448"),
     OWNER_NAME: get('OWNER_NAME', "THENULA"),
     DESCRIPTION: get('DESCRIPTION', "*© ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENUWA XMD*"),
     DEV: process.env.DEV || "94773416478",
@@ -110,7 +110,7 @@ const baseConfig = {
 
     // ─── DATABASE & API ───
     DASHBOARD_PASSWORD: process.env.DASHBOARD_PASSWORD || get('DASHBOARD_PASSWORD', 'thenula@2007'),  //DASHBOARD PASSWORD ekak da ganna
-    MONGODB_URI: process.env.MONGODB_URI || get('MONGODB_URI', ''),
+    MONGODB_URI: process.env.MONGODB_URI || get('MONGODB_URI', 'mongodb+srv://thenula:Thenula@18@cluster0.wp8lfl7.mongodb.net/'),
     MONGODB_DB_NAME: process.env.MONGODB_DB_NAME || get('MONGODB_DB_NAME', 'thenula'),    //oyalage database name eka danna methanata
     
   
