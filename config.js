@@ -115,7 +115,7 @@ const baseConfig = {
     
   
     PATHUM_API_URL: process.env.PATHUM_API_URL || get('PATHUM_API_URL', 'https://pathumtech-api.vercel.app'),
-    PATHUM_API_KEY: process.env.PATHUM_API_KEY || get('PATHUM_API_KEY', 'your api key')
+    PATHUM_API_KEY: process.env.PATHUM_API_KEY || get('PATHUM_API_KEY', 'pt_941f59be3ce770732528e7445a428dc24e95669d994c0ef5')
 };
 
 console.log('🔑 SESSION_ID:', baseConfig.SESSION_ID ? 'loaded' : 'MISSING');
