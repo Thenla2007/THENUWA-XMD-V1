@@ -30,10 +30,10 @@ async (conn, mek, m, {
         // ══════════════════════════════════════════════════════════
         // ⭐ CONFIG VALUES
         // ══════════════════════════════════════════════════════════
-        const botName = config.BOT_NAME || 'LUXALGO-MD';
-        const ownerName = config.OWNER_NAME || 'LUXALGO';
+        const botName = config.BOT_NAME || 'THENUWA XMD';
+        const ownerName = config.OWNER_NAME || 'THENUWA XMD';
         const aliveImg = config.ALIVE_IMG || 'https://i.postimg.cc/Y9VQtfYS/file-000000006b04821189e40920bd7a1471.png';
-        const description = config.DESCRIPTION || '> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʟᴜxᴀʟɢᴏ';
+        const description = config.DESCRIPTION || '> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENULA';
 
         // 👤 User name
         const userName = pushname || senderNumber || 'User';
@@ -42,7 +42,7 @@ async (conn, mek, m, {
         // 📝 CAPTION TEXT
         // ══════════════════════════════════════════════════════════
         const caption = `
-👋 𝙷𝙴𝙻𝙻𝙾𝚆 *${userName}* 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 ʟᴜxᴀʟɢᴏ 🎉
+👋 𝙷𝙴𝙻𝙻𝙾𝚆 *${userName}* 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 THENUWA XMD 🎉
 
  ╭─「 ꜱᴛᴀᴛᴜꜱ ᴘᴀɴᴇʟ 」 ──●●►
  │  ⏳ *Uptime*   : ${uptime}
@@ -155,13 +155,13 @@ ${description}`;
         // ══════════════════════════════════════════════════════════
         // 🔄 FALLBACK — Group & DM දෙකටම
         // ══════════════════════════════════════════════════════════
-        const botName = config.BOT_NAME || 'LUXALGO-MD';
-        const ownerName = config.OWNER_NAME || 'LUXALGO';
-        const description = config.DESCRIPTION || '> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ʟᴜxᴀʟɢᴏ';
+        const botName = config.BOT_NAME || 'THENUWA XMD';
+        const ownerName = config.OWNER_NAME || 'THENULA';
+        const description = config.DESCRIPTION || '> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENULA';
         const userName = pushname || senderNumber || 'User';
 
         const fallback = `
-👋 𝙷𝙴𝙻𝙻𝙾𝚆 *${userName}* 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 ʟᴜxᴀʟɢᴏ 🎉
+👋 𝙷𝙴𝙻𝙻𝙾𝚆 *${userName}* 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 THENUWA XMD 🎉
 
  ╭─「 ꜱᴛᴀᴛᴜꜱ ᴘᴀɴᴇʟ 」 ──●●►
  │  ⏳ *Uptime*   : ${runtime(process.uptime())}
