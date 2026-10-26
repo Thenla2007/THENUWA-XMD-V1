@@ -19,7 +19,7 @@ async (conn, mek, m, { from }) => {
         const ownerName = 'Thenula Thisen';
         const botName = 'THENUVA X MD';
         const version = config.VERSION || '2.0.0 Beta';
-        const ownerEmail = config.OWNER_EMAIL || 'dilamd@gmail.com';
+        const ownerEmail = config.OWNER_EMAIL || 'dilshanashinsa793@gmail.com';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
@@ -53,12 +53,12 @@ END:VCARD`;
 ╰──────────────┈⊷
 
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ
-© THENUVA X MD`;
+`;
 
         // Send Owner Image
         await conn.sendMessage(from, {
             image: {
-                url: 'https://i.ibb.co/6JrfGTrG/temp-image.jpg'
+                url: 'https://github.com/Thenla2007/THENUWA-XMD-V1/blob/main/IMG-20261026-WA0116.jpg'
             },
             caption,
             contextInfo: {
