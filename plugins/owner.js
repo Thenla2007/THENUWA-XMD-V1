@@ -60,9 +60,15 @@ END:VCARD`;
             image: {
                 url: 'https://i.ibb.co/6JrfGTrG/temp-image.jpg'
             },
-            caption: caption,
+            caption,
             contextInfo: {
-                mentionedJid: [`${cleanNumber}@s.whatsapp.net`]
+                mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterName: 'THENUVA X MD',
+                    serverMessageId: 143
+                }
             }
         }, { quoted: mek });
 
