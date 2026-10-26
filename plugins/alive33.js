@@ -32,7 +32,7 @@ async (conn, mek, m, {
         // ══════════════════════════════════════════════════════════
         const botName = config.BOT_NAME || 'THENUWA XMD';
         const ownerName = config.OWNER_NAME || 'THENUWA XMD';
-        const aliveImg = config.ALIVE_IMG || 'https://i.postimg.cc/Y9VQtfYS/file-000000006b04821189e40920bd7a1471.png';
+        const aliveImg = config.ALIVE_IMG || 'https://files.catbox.moe/93yy0e.jpeg';
         const description = config.DESCRIPTION || '> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ THENULA';
 
         // 👤 User name
