@@ -71,7 +71,7 @@ END:VCARD`;
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '',
+                    newsletterJid: '120363432592026043@newsletter',
                     newsletterName: 'THENUVA X MD',
                     serverMessageId: 143
                 }
