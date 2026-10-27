@@ -8,22 +8,19 @@ const audioPath = path.join(__dirname, '../media/goku_owner.mp3');
 cmd({
     pattern: 'owner',
     alias: ['dev', 'dila', 'bot'],
+    react: '✅',
     desc: 'Get owner details',
     category: 'main',
-    react: '👤',
     filename: __filename
 },
-async (conn, mek, m, {
-    from, sender, senderNumber, pushname, isGroup, reply
-}) => {
+async (conn, mek, m, { from, sender, pushname, isGroup, reply }) => {
     try {
-        // ═══════════════════════════════════════
         // OWNER DETAILS
-        // ═══════════════════════════════════════
         const ownerNumber = '94763853448';
         const ownerName = 'Thenula Thisan';
         const botName = config.BOT_NAME || 'THENUWA X MD';
-        const version = config.VERSION || '3.0.0 BETA';
+        const version = config.VERSION || '2.0.0 Beta';
+
         const ownerEmail =
             config.OWNER_EMAIL || 'thenulathisan130@gmail.com';
 
@@ -33,12 +30,10 @@ async (conn, mek, m, {
         const ownerImageUrl =
             'https://files.catbox.moe/y300u3.png';
 
-        const ownerChatUrl = `https://wa.me/${ownerNumber}`;
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
+        const ownerChatUrl = `https://wa.me/${cleanNumber}`;
 
-        // ═══════════════════════════════════════
-        // CONTACT CARD
-        // ═══════════════════════════════════════
+        // OWNER CONTACT CARD
         const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${ownerName}
@@ -58,38 +53,31 @@ END:VCARD`;
             }
         }, { quoted: mek });
 
-        // ═══════════════════════════════════════
-        // OWNER CAPTION
-        // ═══════════════════════════════════════
-        const userName = pushname || senderNumber || 'User';
+        // OWNER DETAILS CAPTION
+        const userName = pushname || 'User';
 
-        const caption = `
-╭━━〔 *${botName}* 〕━━┈⊷
+        const caption = `╭━━〔 *${botName}* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃ 👤 *OWNER DETAILS*
 ┃◈┃
-┃◈┃ • *Name:* ${ownerName}
-┃◈┃ • *Number:* ${ownerNumber}
-┃◈┃ • *Email:* ${ownerEmail}
-┃◈┃ • *Version:* ${version}
-┃◈┃ • *Requested by:* ${userName}
+┃◈┃ • *Name* - ${ownerName}
+┃◈┃ • *Number* - ${ownerNumber}
+┃◈┃ • *Email* - ${ownerEmail}
+┃◈┃ • *Version* - ${version}
+┃◈┃ • *Requested by* - ${userName}
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 
-💬 *CHAT WITH OWNER*
-${ownerChatUrl}
-
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ${botName}`;
 
-        // ═══════════════════════════════════════
         // CONTEXT INFO — SAME STYLE AS ALIVE.JS
-        // ═══════════════════════════════════════
         const contextInfo = {
             mentionedJid: sender ? [sender] : [],
             forwardingScore: 999,
             isForwarded: true
         };
 
+        // NEWSLETTER ATTRIBUTION IN PRIVATE CHAT
         if (!isGroup) {
             contextInfo.forwardedNewsletterMessageInfo = {
                 newsletterJid: '120363409414874042@newsletter',
@@ -98,50 +86,25 @@ ${ownerChatUrl}
             };
         }
 
-        // ═══════════════════════════════════════
-        // BUTTONS — SAME STRUCTURE AS ALIVE.JS
-        // ═══════════════════════════════════════
-        const buttonEnabled =
-            String(config.BUTTON).toLowerCase() === 'true';
-
-        if (buttonEnabled) {
-            await conn.sendMessage(from, {
-                image: { url: ownerImageUrl },
-                caption,
-                footer: `© ${botName}`,
-                ai: !isGroup,
-                buttons: [
-                    {
-                        buttonId: '.alive',
-                        buttonText: {
-                            displayText: '🟢 Alive'
-                        },
-                        type: 1
-                    },
-                    {
-                        buttonId: '.menu',
-                        buttonText: {
-                            displayText: '📋 Menu'
-                        },
-                        type: 1
+        // OWNER IMAGE + ONE WHATSAPP URL BUTTON
+        await conn.sendMessage(from, {
+            image: { url: ownerImageUrl },
+            caption,
+            footer: `© ${botName}`,
+            ai: !isGroup,
+            templateButtons: [
+                {
+                    index: 1,
+                    urlButton: {
+                        displayText: '💬 CHAT ON WHATSAPP',
+                        url: ownerChatUrl
                     }
-                ],
-                headerType: 1,
-                contextInfo
-            }, { quoted: mek });
+                }
+            ],
+            contextInfo
+        }, { quoted: mek });
 
-        } else {
-            await conn.sendMessage(from, {
-                image: { url: ownerImageUrl },
-                caption,
-                ai: !isGroup,
-                contextInfo
-            }, { quoted: mek });
-        }
-
-        // ═══════════════════════════════════════
-        // OPTIONAL AUDIO
-        // ═══════════════════════════════════════
+        // OPTIONAL OWNER AUDIO
         if (fs.existsSync(audioPath)) {
             await conn.sendMessage(from, {
                 audio: fs.readFileSync(audioPath),
@@ -153,8 +116,7 @@ ${ownerChatUrl}
     } catch (error) {
         console.error('[THENUWA X MD OWNER ERROR]', error);
 
-        const errorText =
-            `❌ Owner command error: ${error.message}`;
+        const errorText = `❌ Owner command error: ${error.message}`;
 
         try {
             await conn.sendMessage(from, {
