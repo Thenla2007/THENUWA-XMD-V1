@@ -26,7 +26,7 @@ async (conn, mek, m, { from }) => {
         const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
 
         // OWNER DETAILS IMAGE URL
-        const ownerImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
+        const ownerImageUrl = 'https://files.catbox.moe/93yy0e.jpeg';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
@@ -66,7 +66,7 @@ END:VCARD`;
         
 await conn.sendMessage(from, {
     image: {
-        url: 'https://files.catbox.moe/xwpeh6.jpg' // මෙතන ඔයාගේ Image URL එක දාන්න
+        url: 'https://files.catbox.moe/93yy0e.jpeg' // මෙතන ඔයාගේ Image URL එක දාන්න
     },
     caption,
     contextInfo: {
