@@ -65,21 +65,44 @@ END:VCARD`;
         // OWNER IMAGE MESSAGE
         
 
-await conn.sendMessage(from, {
-    image: {
-        url: 'https://files.catbox.moe/93yy0e.jpeg'
-    },
-    caption,
-    contextInfo: {
-        mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
-        forwardingScore: 999,
-        isForwarded: true,
-        forwardedNewsletterMessageInfo: {
-            newsletterName: '『⚡ THENUVA X MD ⚡』',
-            serverMessageId: 143
-        }
-    }
-}, { quoted: mek });
+
+        // Send Owner Contact Card
+        await conn.sendMessage(from, {
+            contacts: {
+                displayName: ownerName,
+                contacts: [{ vcard }]
+            }
+        }, { quoted: mek });
+
+        // Owner Details Caption
+        const caption = `╭━━〔 *THENUVA X MD* 〕━━┈⊷
+┃◈╭─────────────·๏
+┃◈┃• *Here is the owner details*
+┃◈┃• *Name* - ${ownerName}
+┃◈┃• *Number* - ${ownerNumber}
+┃◈┃• *Version* - ${version}
+┃◈└───────────┈⊷
+╰──────────────┈⊷
+
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
+
+        // Send Owner Image + Newsletter Attribution
+        await conn.sendMessage(from, {
+            image: {
+                url: 'https://files.catbox.moe/93yy0e.jpeg'
+            },
+            caption: caption,
+            contextInfo: {
+                mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
+                forwardingScore: 999,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '',
+                    newsletterName: 'THENUVA X MD',
+                    serverMessageId: 143
+                }
+            }
+        }, { quoted: mek });
 
         // OWNER AUDIO (OPTIONAL)
         if (fs.existsSync(audioPath)) {
