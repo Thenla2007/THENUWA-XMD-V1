@@ -23,8 +23,8 @@ async (conn, mek, m, { from }) => {
             config.OWNER_EMAIL || 'thenulathisan130@gmail.com';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
-        const ownerImageUrl = 'https://files.catbox.moe/y300u3.png';
         const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
+        const ownerImageUrl = 'https://files.catbox.moe/y300u3.png';
 
         // Owner contact card
         const vcard = `BEGIN:VCARD
@@ -46,7 +46,7 @@ END:VCARD`;
             }
         }, { quoted: mek });
 
-        // Owner details
+        // Owner details caption
         const caption = `╭━━〔 *THENUWA X MD* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• *Here is the owner details*
@@ -56,9 +56,9 @@ END:VCARD`;
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 
-> ©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜwa xᴍᴅ`;
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
 
-        // Keep THENUWA X MD forwarded newsletter attribution
+        // Owner image with THENUVA X MD forwarding attribution
         await conn.sendMessage(from, {
             image: { url: ownerImageUrl },
             caption,
@@ -74,19 +74,20 @@ END:VCARD`;
             }
         }, { quoted: mek });
 
-        // WhatsApp chat button (separate message)
+        // WhatsApp chat URL button
+        // Uses the interactiveButtons format supported by some Baileys forks.
         await conn.sendMessage(from, {
-            text: '╭━━〔 *THENUVA X MD* 〕━━┈⊷\n\n💬 *CHAT ON WHATSAPP*\n\n👇 Tap below to chat with the owner.',
-            templateButtons: [
+            text: '💬 *CHAT ON WHATSAPP*\n\nTap the button below to open the owner chat.',
+            footer: '© THENUVA X MD',
+            interactiveButtons: [
                 {
-                    index: 1,
-                    urlButton: {
-                        displayText: '💬 CHAT ON WHATSAPP',
+                    name: 'cta_url',
+                    buttonParamsJson: JSON.stringify({
+                        display_text: '💬 CHAT ON WHATSAPP',
                         url: `https://wa.me/${cleanNumber}`
-                    }
+                    })
                 }
-            ],
-            footer: '© THENUVA X MD'
+            ]
         }, { quoted: mek });
 
         // Optional owner audio
