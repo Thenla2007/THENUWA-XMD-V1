@@ -56,7 +56,7 @@ END:VCARD`;
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
+> ©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜwa xᴍᴅ`;
 
         // Keep THENUWA X MD forwarded newsletter attribution
         await conn.sendMessage(from, {
