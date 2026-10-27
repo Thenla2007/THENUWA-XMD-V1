@@ -16,15 +16,15 @@ cmd({
 async (conn, mek, m, { from }) => {
     try {
         const ownerNumber = '94763853448';
-        const ownerName = 'Thenula Thisen';
-        const botName = 'THENUVA X MD';
+        const ownerName = 'Thenula Thisean';
+        const botName = 'THENUWA X MD';
         const version = config.VERSION || '2.0.0 Beta';
         const ownerEmail =
             config.OWNER_EMAIL || 'thenulathisan130@gmail.com';
 
         // Image URLs
         const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
-        const ownerImageUrl = 'https://files.catbox.moe/93yy0e.jpeg';
+        const ownerImageUrl = 'https://files.catbox.moe/y300u3.png';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
@@ -49,7 +49,7 @@ END:VCARD`;
         }, { quoted: mek });
 
         // Owner Details Caption
-        const caption = `╭━━〔 *THENUVA X MD* 〕━━┈⊷
+        const caption = `╭━━〔 *THENUWA X MD* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• *Here is the owner details*
 ┃◈┃• *Name* - ${ownerName}
@@ -72,7 +72,7 @@ END:VCARD`;
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363432592026043@newsletter',
-                    newsletterName: 'THENUVA X MD',
+                    newsletterName: 'THENUWA X MD',
                     serverMessageId: 143
                 }
             }
@@ -88,7 +88,7 @@ END:VCARD`;
         }
 
     } catch (error) {
-        console.error('[THENUVA X MD OWNER ERROR]', error);
+        console.error('[THENUWA X MD OWNER ERROR]', error);
 
         await conn.sendMessage(from, {
             text: `❌ Owner command error: ${error.message}`
