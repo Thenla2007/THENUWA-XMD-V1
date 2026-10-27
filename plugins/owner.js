@@ -63,19 +63,22 @@ END:VCARD`;
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
 
         // OWNER IMAGE MESSAGE
-        await conn.sendMessage(from, {
-            image: { url: ownerImageUrl },
-            caption,
-            contextInfo: {
-                mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
-                forwardingScore: 999,
-                isForwarded: true,
-                forwardedNewsletterMessageInfo: {
-                    newsletterName: botName,
-                    serverMessageId: 143
-                }
-            }
-        }, { quoted: mek });
+        
+await conn.sendMessage(from, {
+    image: {
+        url: 'https://files.catbox.moe/xwpeh6.jpg' // මෙතන ඔයාගේ Image URL එක දාන්න
+    },
+    caption,
+    contextInfo: {
+        mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
+        forwardingScore: 999,
+        isForwarded: true,
+        forwardedNewsletterMessageInfo: {
+            newsletterName: botName,
+            serverMessageId: 143
+        }
+    }
+}, { quoted: mek });
 
         // OWNER AUDIO (OPTIONAL)
         if (fs.existsSync(audioPath)) {
