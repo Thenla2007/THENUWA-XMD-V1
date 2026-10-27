@@ -64,9 +64,10 @@ END:VCARD`;
 
         // OWNER IMAGE MESSAGE
         
+
 await conn.sendMessage(from, {
     image: {
-        url: 'https://files.catbox.moe/93yy0e.jpeg' // මෙතන ඔයාගේ Image URL එක දාන්න
+        url: 'https://files.catbox.moe/93yy0e.jpeg'
     },
     caption,
     contextInfo: {
@@ -74,7 +75,7 @@ await conn.sendMessage(from, {
         forwardingScore: 999,
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
-            newsletterName: botName,
+            newsletterName: '『⚡ THENUVA X MD ⚡』',
             serverMessageId: 143
         }
     }
