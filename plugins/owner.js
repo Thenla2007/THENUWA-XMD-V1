@@ -77,18 +77,18 @@ END:VCARD`;
         // WhatsApp chat URL button
         // Uses the interactiveButtons format supported by some Baileys forks.
         await conn.sendMessage(from, {
-            text: '💬 *CHAT ON WHATSAPP*\n\nTap the button below to open the owner chat.',
-            footer: '© THENUVA X MD',
-            interactiveButtons: [
-                {
-                    name: 'cta_url',
-                    buttonParamsJson: JSON.stringify({
-                        display_text: '💬 CHAT ON WHATSAPP',
-                        url: `https://wa.me/${cleanNumber}`
-                    })
-                }
-            ]
-        }, { quoted: mek });
+    text: '💬 CHAT ON WHATSAPP',
+    footer: '© THENUWA X MD',
+    templateButtons: [
+        {
+            index: 1,
+            urlButton: {
+                displayText: '💬 CHAT ON WHATSAPP',
+                url: 'https://wa.me/94763853448'
+            }
+        }
+    ]
+}, { quoted: mek });
 
         // Optional owner audio
         if (fs.existsSync(audioPath)) {
