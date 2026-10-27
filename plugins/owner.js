@@ -20,7 +20,7 @@ async (conn, mek, m, { from }) => {
         const botName = 'THENUVA X MD';
         const version = config.VERSION || '2.0.0 Beta';
         const ownerEmail =
-            config.OWNER_EMAIL || 'dilshanashinsa793@gmail.com';
+            config.OWNER_EMAIL || 'thenulathisan130@gmail.com';
 
         // CONTACT CARD IMAGE URL
         const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
