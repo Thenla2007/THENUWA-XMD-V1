@@ -19,11 +19,16 @@ async (conn, mek, m, { from }) => {
         const ownerName = 'Thenula Thisen';
         const botName = 'THENUVA X MD';
         const version = config.VERSION || '2.0.0 Beta';
-        const ownerEmail = config.OWNER_EMAIL || 'dilshanashinsa793@gmail.com';
+        const ownerEmail =
+            config.OWNER_EMAIL || 'dilshanashinsa793@gmail.com';
+
+        // Image URL for the contact photo field
+        const profileImageUrl =
+            'https://files.catbox.moe/xwpeh6.jpg';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
-        // Owner Contact Card
+        // Contact Card
         const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${ownerName}
@@ -32,9 +37,11 @@ ORG:${botName}
 TITLE:Founder & Developer
 TEL;TYPE=CELL,VOICE;waid=${cleanNumber}:+${cleanNumber}
 EMAIL:${ownerEmail}
+PHOTO;VALUE=URI:${profileImageUrl}
 NOTE:Official contact card of ${botName}
 END:VCARD`;
 
+        // Send Contact Card
         await conn.sendMessage(from, {
             contacts: {
                 displayName: ownerName,
@@ -52,17 +59,18 @@ END:VCARD`;
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
 
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ
-`;
+> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
 
-        // Send Owner Image
+        // Send Owner Details Image
         await conn.sendMessage(from, {
             image: {
-                url: 'https://files.catbox.moe/xwpeh6.jpg'
+                url: profileImageUrl
             },
             caption,
             contextInfo: {
-                mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
+                mentionedJid: [
+                    `${cleanNumber}@s.whatsapp.net`
+                ],
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
@@ -82,7 +90,10 @@ END:VCARD`;
         }
 
     } catch (error) {
-        console.error('[THENUVA X MD OWNER ERROR]', error);
+        console.error(
+            '[THENUVA X MD OWNER ERROR]',
+            error
+        );
 
         await conn.sendMessage(from, {
             text: `❌ Owner command error: ${error.message}`
