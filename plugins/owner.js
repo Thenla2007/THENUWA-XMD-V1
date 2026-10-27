@@ -58,7 +58,7 @@ END:VCARD`;
         // Send Owner Image
         await conn.sendMessage(from, {
             image: {
-                url: 'https://github.com/Thenla2007/THENUWA-XMD-V1/blob/main/IMG-20261026-WA0116.jpg'
+                url: 'https://files.catbox.moe/xwpeh6.jpg'
             },
             caption,
             contextInfo: {
