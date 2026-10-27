@@ -22,31 +22,30 @@ async (conn, mek, m, { from }) => {
         const ownerEmail =
             config.OWNER_EMAIL || 'dilshanashinsa793@gmail.com';
 
-        // CONTACT PROFILE IMAGE URL
+        // CONTACT CARD IMAGE URL
         const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
 
-        // OWNER COMMAND IMAGE URL
-        const ownerImageUrl = 'https://files.catbox.moe/93yy0e.jpeg';
+        // OWNER DETAILS IMAGE URL
+        const ownerImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
         // CONTACT CARD
         const vcard = `BEGIN:VCARD
 VERSION:3.0
-FN:${ownerName}
-N:${ownerName};;;
+FN:${botName}
+N:${botName};;;
 ORG:${botName}
-TITLE:Founder & Developer
+TITLE:Owner - ${ownerName}
 TEL;TYPE=CELL,VOICE;waid=${cleanNumber}:+${cleanNumber}
 EMAIL:${ownerEmail}
 PHOTO;VALUE=URI:${profileImageUrl}
-NOTE:Official contact card of ${botName}
+NOTE:Owner: ${ownerName}
 END:VCARD`;
 
-        // SEND CONTACT CARD
         await conn.sendMessage(from, {
             contacts: {
-                displayName: ownerName,
+                displayName: botName,
                 contacts: [{ vcard }]
             }
         }, { quoted: mek });
@@ -63,7 +62,7 @@ END:VCARD`;
 
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
 
-        // SEND OWNER IMAGE
+        // OWNER IMAGE MESSAGE
         await conn.sendMessage(from, {
             image: { url: ownerImageUrl },
             caption,
@@ -72,13 +71,13 @@ END:VCARD`;
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
-                    newsletterName: 'THENUVA X MD',
+                    newsletterName: botName,
                     serverMessageId: 143
                 }
             }
         }, { quoted: mek });
 
-        // SEND OWNER AUDIO IF AVAILABLE
+        // OWNER AUDIO (OPTIONAL)
         if (fs.existsSync(audioPath)) {
             await conn.sendMessage(from, {
                 audio: fs.readFileSync(audioPath),
