@@ -9,7 +9,7 @@ cmd({
     pattern: 'owner',
     alias: ['dev', 'dila', 'bot'],
     react: '✅',
-    desc: 'Get owner number',
+    desc: 'Get owner details',
     category: 'main',
     filename: __filename
 },
@@ -22,13 +22,15 @@ async (conn, mek, m, { from }) => {
         const ownerEmail =
             config.OWNER_EMAIL || 'dilshanashinsa793@gmail.com';
 
-        // Image URL for the contact photo field
-        const profileImageUrl =
-            'https://files.catbox.moe/xwpeh6.jpg';
+        // CONTACT PROFILE IMAGE URL
+        const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
+
+        // OWNER COMMAND IMAGE URL
+        const ownerImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
-        // Contact Card
+        // CONTACT CARD
         const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${ownerName}
@@ -41,7 +43,7 @@ PHOTO;VALUE=URI:${profileImageUrl}
 NOTE:Official contact card of ${botName}
 END:VCARD`;
 
-        // Send Contact Card
+        // SEND CONTACT CARD
         await conn.sendMessage(from, {
             contacts: {
                 displayName: ownerName,
@@ -49,7 +51,7 @@ END:VCARD`;
             }
         }, { quoted: mek });
 
-        // Owner Details Caption
+        // OWNER DETAILS CAPTION
         const caption = `╭━━〔 *THENUVA X MD* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• *Here is the owner details*
@@ -61,16 +63,12 @@ END:VCARD`;
 
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
 
-        // Send Owner Details Image
+        // SEND OWNER IMAGE
         await conn.sendMessage(from, {
-            image: {
-                url: profileImageUrl
-            },
+            image: { url: ownerImageUrl },
             caption,
             contextInfo: {
-                mentionedJid: [
-                    `${cleanNumber}@s.whatsapp.net`
-                ],
+                mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
                 forwardingScore: 999,
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
@@ -80,7 +78,7 @@ END:VCARD`;
             }
         }, { quoted: mek });
 
-        // Send Owner Audio if available
+        // SEND OWNER AUDIO IF AVAILABLE
         if (fs.existsSync(audioPath)) {
             await conn.sendMessage(from, {
                 audio: fs.readFileSync(audioPath),
@@ -90,10 +88,7 @@ END:VCARD`;
         }
 
     } catch (error) {
-        console.error(
-            '[THENUVA X MD OWNER ERROR]',
-            error
-        );
+        console.error('[THENUVA X MD OWNER ERROR]', error);
 
         await conn.sendMessage(from, {
             text: `❌ Owner command error: ${error.message}`
