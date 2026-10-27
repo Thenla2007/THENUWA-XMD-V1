@@ -26,7 +26,7 @@ async (conn, mek, m, { from }) => {
         const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
 
         // OWNER COMMAND IMAGE URL
-        const ownerImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
+        const ownerImageUrl = 'https://files.catbox.moe/93yy0e.jpeg';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
