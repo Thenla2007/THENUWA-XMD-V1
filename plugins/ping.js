@@ -42,7 +42,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363409414874042@newsletter',
-                    newsletterName: "LUXALGO MD",
+                    newsletterName: "THENUWA XMD",
                     serverMessageId: 143
                 }
             }
