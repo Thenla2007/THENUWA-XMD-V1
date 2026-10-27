@@ -22,51 +22,25 @@ async (conn, mek, m, { from }) => {
         const ownerEmail =
             config.OWNER_EMAIL || 'thenulathisan130@gmail.com';
 
-        // CONTACT CARD IMAGE URL
+        // Image URLs
         const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
-
-        // OWNER DETAILS IMAGE URL
         const ownerImageUrl = 'https://files.catbox.moe/93yy0e.jpeg';
 
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
 
-        // CONTACT CARD
+        // Contact Card
         const vcard = `BEGIN:VCARD
 VERSION:3.0
-FN:${botName}
-N:${botName};;;
+FN:${ownerName}
+N:${ownerName};;;
 ORG:${botName}
-TITLE:Owner - ${ownerName}
+TITLE:Owner & Developer
 TEL;TYPE=CELL,VOICE;waid=${cleanNumber}:+${cleanNumber}
 EMAIL:${ownerEmail}
 PHOTO;VALUE=URI:${profileImageUrl}
-NOTE:Owner: ${ownerName}
+NOTE:Owner of ${botName}
 END:VCARD`;
 
-        await conn.sendMessage(from, {
-            contacts: {
-                displayName: botName,
-                contacts: [{ vcard }]
-            }
-        }, { quoted: mek });
-
-        // OWNER DETAILS CAPTION
-        const caption = `╭━━〔 *THENUVA X MD* 〕━━┈⊷
-┃◈╭─────────────·๏
-┃◈┃• *Here is the owner details*
-┃◈┃• *Name* - ${ownerName}
-┃◈┃• *Number* - ${ownerNumber}
-┃◈┃• *Version* - ${version}
-┃◈└───────────┈⊷
-╰──────────────┈⊷
-
-> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
-
-        // OWNER IMAGE MESSAGE
-        
-
-
-        // Send Owner Contact Card
         await conn.sendMessage(from, {
             contacts: {
                 displayName: ownerName,
@@ -86,12 +60,12 @@ END:VCARD`;
 
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
 
-        // Send Owner Image + Newsletter Attribution
+        // Owner Image
         await conn.sendMessage(from, {
             image: {
-                url: 'https://files.catbox.moe/93yy0e.jpeg'
+                url: ownerImageUrl
             },
-            caption: caption,
+            caption,
             contextInfo: {
                 mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
                 forwardingScore: 999,
@@ -104,7 +78,7 @@ END:VCARD`;
             }
         }, { quoted: mek });
 
-        // OWNER AUDIO (OPTIONAL)
+        // Owner Audio (optional)
         if (fs.existsSync(audioPath)) {
             await conn.sendMessage(from, {
                 audio: fs.readFileSync(audioPath),
