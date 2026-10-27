@@ -22,13 +22,11 @@ async (conn, mek, m, { from }) => {
         const ownerEmail =
             config.OWNER_EMAIL || 'thenulathisan130@gmail.com';
 
-        // Image URLs
-        const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
-        const ownerImageUrl = 'https://files.catbox.moe/y300u3.png';
-
         const cleanNumber = ownerNumber.replace(/[^0-9]/g, '');
+        const ownerImageUrl = 'https://files.catbox.moe/y300u3.png';
+        const profileImageUrl = 'https://files.catbox.moe/xwpeh6.jpg';
 
-        // Contact Card
+        // Owner contact card
         const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${ownerName}
@@ -48,7 +46,7 @@ END:VCARD`;
             }
         }, { quoted: mek });
 
-        // Owner Details Caption
+        // Owner details
         const caption = `╭━━〔 *THENUWA X MD* 〕━━┈⊷
 ┃◈╭─────────────·๏
 ┃◈┃• *Here is the owner details*
@@ -60,11 +58,9 @@ END:VCARD`;
 
 > © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴛʜᴇɴᴜᴠᴀ x ᴍᴅ`;
 
-        // Owner Image
+        // Keep THENUWA X MD forwarded newsletter attribution
         await conn.sendMessage(from, {
-            image: {
-                url: ownerImageUrl
-            },
+            image: { url: ownerImageUrl },
             caption,
             contextInfo: {
                 mentionedJid: [`${cleanNumber}@s.whatsapp.net`],
@@ -72,13 +68,28 @@ END:VCARD`;
                 isForwarded: true,
                 forwardedNewsletterMessageInfo: {
                     newsletterJid: '120363432592026043@newsletter',
-                    newsletterName: 'THENUWA X MD',
+                    newsletterName: 'THENUVA X MD',
                     serverMessageId: 143
                 }
             }
         }, { quoted: mek });
 
-        // Owner Audio (optional)
+        // WhatsApp chat button (separate message)
+        await conn.sendMessage(from, {
+            text: '╭━━〔 *THENUVA X MD* 〕━━┈⊷\n\n💬 *CHAT ON WHATSAPP*\n\n👇 Tap below to chat with the owner.',
+            templateButtons: [
+                {
+                    index: 1,
+                    urlButton: {
+                        displayText: '💬 CHAT ON WHATSAPP',
+                        url: `https://wa.me/${cleanNumber}`
+                    }
+                }
+            ],
+            footer: '© THENUVA X MD'
+        }, { quoted: mek });
+
+        // Optional owner audio
         if (fs.existsSync(audioPath)) {
             await conn.sendMessage(from, {
                 audio: fs.readFileSync(audioPath),
@@ -88,7 +99,7 @@ END:VCARD`;
         }
 
     } catch (error) {
-        console.error('[THENUWA X MD OWNER ERROR]', error);
+        console.error('[THENUVA X MD OWNER ERROR]', error);
 
         await conn.sendMessage(from, {
             text: `❌ Owner command error: ${error.message}`
