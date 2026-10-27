@@ -16,7 +16,7 @@ cmd({
 async (conn, mek, m, { from }) => {
     try {
         const ownerNumber = '94763853448';
-        const ownerName = 'Thenula Thisean';
+        const ownerName = 'Thenula Thisan';
         const botName = 'THENUWA X MD';
         const version = config.VERSION || '2.0.0 Beta';
         const ownerEmail =
