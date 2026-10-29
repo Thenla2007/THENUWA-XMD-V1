@@ -49,7 +49,7 @@ function get(key, defaultValue) {
 // ══════════════════════════════════════════════════════════════
 const baseConfig = {
     // ─── BOT CORE ───
-    SESSION_ID: process.env.SESSION_ID || get('SESSION_ID', "LUXALGO=mwhC3LgR#GyrgFSl4Z8ttC1fuUl_iKTH5qL2VeXdggAzHKOvY6BI"),
+    SESSION_ID: process.env.SESSION_ID || get('SESSION_ID', "LUXALGO=5qJgAZ4b#MwACcq4RQxAT2P1NbPgh2a5kk9un0STQiCuDOR3QkCE"),
     PREFIX: get('PREFIX', "."),
     BOT_NAME: get('BOT_NAME', "THENUWA XMD"),
     STICKER_NAME: get('STICKER_NAME', "THENUWA XMD"),
